@@ -35,10 +35,11 @@ main>.pitwall{display:grid;grid-template-columns:1fr 1.7fr;gap:0 35px;margin:0 0
 <section id="rules" class="guide"><div class="section-heading"><div><span class="section-index">05 / NO GUESSWORK</span><h2>KNOW<br><em>THE RULES.</em></h2></div><div class="tier-legend"><span class="tier c">C</span><span>BUILD</span><span class="tier b">B</span><span>PUSH</span><span class="tier a">A</span><span>LEAD</span></div></div><p class="guide-intro">Every result earns points. Your points decide your position.<br>Your points <b>and required outputs</b> unlock your class.</p><details><summary>OPEN THE SCORING SHEET <span>↗</span></summary><div class="table-scroll"><table><thead><tr><th>FUNCTION</th><th>POINTS PER RESULT</th><th>MEMBER · C / B / A</th><th>TL · C / B / A</th></tr></thead><tbody id="how"></tbody></table></div></details><p class="rules-note">1 November–2 December 2026 · Cairo time. Only November results count. Class qualification requires both the points target and any minimum outputs. Pit wall projections are hypothetical and do not change the standings.</p></section>
 <footer><a class="footer-brand" href="#overview">RUN YOUR LANE<span>↗</span></a><p>Original campaign by <strong>Ziad Sayeh</strong><br>LCVP TM & IM · AIESEC in Ain Shams University</p><span class="footer-date">01 NOV — 02 DEC / CAIRO</span></footer></main></div><div id="toast" role="status" aria-live="polite" hidden></div><script type="module">// Scoring policy carried forward from the original dashboard.
 const FN = {
+const FN = {
   OGV: {
     pts: { APD: 9 },
-    M: { t: [48, 64, 88] },
-    TL: { t: [96, 136, 200] }
+    M: { t: [54, 72, 99] },
+    TL: { t: [108, 153, 225] }
   },
 
   OGT: {
@@ -49,8 +50,8 @@ const FN = {
 
   IGV: {
     pts: { APD: 4, OPEN: 5 },
-    M: { t: [30, 40, 60] },
-    TL: { t: [75, 125, 175] }
+    M: { t: [66, 88, 124] },
+    TL: { t: [175, 265, 355] }
   },
 
   IGTA: {
@@ -60,7 +61,7 @@ const FN = {
       min: { OPEN: [5, 7, 9] }
     },
     TL: {
-      t: [80, 96, 120],
+      t: [91, 112, 156],
       min: { OPEN: [7, 7, 9] }
     }
   },
@@ -68,12 +69,12 @@ const FN = {
   IGTE: {
     pts: { APD: 9, OPEN: 9 },
     M: {
-      t: [40, 56, 72],
+      t: [45, 63, 81],
       min: { OPEN: [5, 7, 9] }
     },
     TL: {
-      t: [80, 96, 120],
-      min: { OPEN: [7, 7, 9] }
+      t: [135, 180, 243],
+      min: { OPEN: [10, 12, 15] }
     }
   },
 
@@ -91,8 +92,8 @@ const FN = {
 
   BD: {
     pts: { MONEY: 0.002 },
-    M: { t: [60, 90, 105] },
-    TL: { t: [60, 150, 210] }
+    M: { t: [40, 60, 70] },
+    TL: { t: [40, 100, 140] }
   }
 };
 const FUNCTIONS=['OGV','OGT','IGV','IGTA','IGTE','B2C','BD'];
