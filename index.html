@@ -34,14 +34,67 @@ main>.pitwall{display:grid;grid-template-columns:1fr 1.7fr;gap:0 35px;margin:0 0
 <section id="functions" class="function-section" hidden><div class="section-heading"><div><span class="section-index">04 / STAY IN YOUR LANE</span><h2>THE FUNCTION<br><em>TRACK.</em></h2></div><p>Different targets. Same ambition.<br><span>Role-adjusted Tier A points progress.</span></p></div><div class="track-header"><span>LANE / FUNCTION</span><span>25% <i>50%</i> 75% <i>100%</i></span><span>AVG. PROGRESS</span></div><div id="lanes"><div class="placeholder">Waiting for the functions to hit the track.</div></div><p class="section-description">Each lane averages individual points ÷ role-specific Tier A target, capped at 100% per racer. Minimum output requirements still apply to tier qualification. Select a lane to view its leaderboard.</p></section>
 <section id="rules" class="guide"><div class="section-heading"><div><span class="section-index">05 / NO GUESSWORK</span><h2>KNOW<br><em>THE RULES.</em></h2></div><div class="tier-legend"><span class="tier c">C</span><span>BUILD</span><span class="tier b">B</span><span>PUSH</span><span class="tier a">A</span><span>LEAD</span></div></div><p class="guide-intro">Every result earns points. Your points decide your position.<br>Your points <b>and required outputs</b> unlock your class.</p><details><summary>OPEN THE SCORING SHEET <span>↗</span></summary><div class="table-scroll"><table><thead><tr><th>FUNCTION</th><th>POINTS PER RESULT</th><th>MEMBER · C / B / A</th><th>TL · C / B / A</th></tr></thead><tbody id="how"></tbody></table></div></details><p class="rules-note">1 November–2 December 2026 · Cairo time. Only November results count. Class qualification requires both the points target and any minimum outputs. Pit wall projections are hypothetical and do not change the standings.</p></section>
 <footer><a class="footer-brand" href="#overview">RUN YOUR LANE<span>↗</span></a><p>Original campaign by <strong>Ziad Sayeh</strong><br>LCVP TM & IM · AIESEC in Ain Shams University</p><span class="footer-date">01 NOV — 02 DEC / CAIRO</span></footer></main></div><div id="toast" role="status" aria-live="polite" hidden></div><script type="module">// Scoring policy carried forward from the original dashboard.
-const FN={
- OGV:{pts:{APD:8},M:{t:[48,64,88]},TL:{t:[96,136,200]}},
- OGT:{pts:{APD:12},M:{t:[36,60,96]},TL:{t:[60,84,120]}},
- IGV:{pts:{APD:4,OPEN:5},M:{t:[30,40,60]},TL:{t:[75,125,175]}},
- IGTA:{pts:{APD:7,OPEN:8},M:{t:[40,56,72],min:{OPEN:[5,7,9]}},TL:{t:[80,96,120],min:{OPEN:[7,7,9]}}},
- B2C:{pts:{EVENT:5,CAMPUS:20},M:{t:[10,15,25],min:{EVENT:[2,3,5]}},TL:{t:[15,35,65],min:{CAMPUS:[0,1,2]}}},
- BD:{pts:{MONEY:.003},M:{t:[60,90,105]},TL:{t:[60,150,210]}}
-};FN.IGTE=FN.IGTA;
+const FN = {
+  OGV: {
+    pts: { APD: 9 },
+    M: { t: [48, 64, 88] },
+    TL: { t: [96, 136, 200] }
+  },
+
+  OGT: {
+    pts: { APD: 12 },
+    M: { t: [36, 60, 96] },
+    TL: { t: [60, 84, 120] }
+  },
+
+  IGV: {
+    pts: { APD: 6, OPEN: 5 },
+    M: { t: [30, 40, 60] },
+    TL: { t: [75, 125, 175] }
+  },
+
+  IGTA: {
+    pts: { APD: 7, OPEN: 8 },
+    M: {
+      t: [40, 56, 72],
+      min: { OPEN: [5, 7, 9] }
+    },
+    TL: {
+      t: [80, 96, 120],
+      min: { OPEN: [7, 7, 9] }
+    }
+  },
+
+  IGTE: {
+    pts: { APD: 9, OPEN: 9 },
+    M: {
+      t: [40, 56, 72],
+      min: { OPEN: [5, 7, 9] }
+    },
+    TL: {
+      t: [80, 96, 120],
+      min: { OPEN: [7, 7, 9] }
+    }
+  },
+
+  B2C: {
+    pts: { EVENT: 5, CAMPUS: 20 },
+    M: {
+      t: [10, 15, 25],
+      min: { EVENT: [2, 3, 5] }
+    },
+    TL: {
+      t: [15, 35, 65],
+      min: { CAMPUS: [0, 1, 2] }
+    }
+  },
+
+  BD: {
+    pts: { MONEY: 0.0015 },
+    M: { t: [60, 90, 105] },
+    TL: { t: [60, 150, 210] }
+  }
+};
 const FUNCTIONS=['OGV','OGT','IGV','IGTA','IGTE','B2C','BD'];
 const LABEL={APD:'APDs',OPEN:'OPENs',EVENT:'Events',CAMPUS:'Campuses',MONEY:'EGP raised'};
 const CONFIG={url:'https://script.google.com/macros/s/AKfycbzkYYTwHwt5uik2aYJVVE_mMkwuDThruBuPshPmnPvwDrK1ZlAiJM34vYbsft_wlMKmMg/exec',refresh:60000,start:Date.parse('2026-11-01T00:00:00+02:00'),end:Date.parse('2026-12-02T23:59:59+02:00')};
